@@ -7,6 +7,14 @@ function createFoodComponent(foodObj) {
   `
 }
 
-function AddFoodComponentToDom(foodObj) {
-  document.querySelector("#food-list").innerHTML += createFoodComponent(foodObj)
+function createFoodSearchComponent(foodObj) {
+  return `
+    <h2>${foodObj.text}</h2>
+    <h3>${foodObj.parsed[0].food.label}</h3>
+    <img src=${foodObj.parsed[0].food.image}>
+  `
+}
+
+function AddFoodComponentToDom(foodComponent, element) {
+  document.querySelector(`#${element}`).innerHTML += foodComponent
 }

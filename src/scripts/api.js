@@ -18,7 +18,7 @@ function addAPIData(foodArr) {
       } else {
         foodItem.ingredients = "ingredients not listed"
       }
-      AddFoodComponentToDom(foodItem)
+      AddFoodComponentToDom(createFoodComponent(foodItem), "food-list")
     })
   })
 }
